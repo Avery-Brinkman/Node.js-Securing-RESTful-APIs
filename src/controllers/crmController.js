@@ -30,22 +30,28 @@ export const getContactWithID = (req, res) => {
         }
         res.json(contact);
     });
-}
+};
 
 export const updateContact = (req, res) => {
-    Contact.findOneAndUpdate({ _id: req.params.contactId}, req.body, { new: true }, (err, contact) => {
-        if (err) {
-            res.send(err);
+    Contact.findOneAndUpdate(
+        { _id: req.params.contactId },
+        req.body,
+        { new: true },
+        (err, contact) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(contact);
         }
-        res.json(contact);
-    })
-}
+    );
+};
 
 export const deleteContact = (req, res) => {
+    // eslint-disable-next-line no-unused-vars
     Contact.remove({ _id: req.params.contactId }, (err, contact) => {
         if (err) {
             res.send(err);
         }
-        res.json({ message: 'Successfully deleted contact'});
-    })
-}
+        res.json({ message: 'Successfully deleted contact' });
+    });
+};

@@ -10,8 +10,9 @@
     },
     "rules": {
         "indent": ["error", 4],
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": ["error", "unix"],
         "quotes": ["error", "single"],
-        "semi": ["error", "always"]
+        "semi": ["error", "always"],
+        "no-var": "error"
     }
 }
